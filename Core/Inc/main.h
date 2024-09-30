@@ -65,6 +65,10 @@ void Error_Handler(void);
 #define LCD_RST_GPIO_Port GPIOC
 #define LCD_CS_Pin GPIO_PIN_9
 #define LCD_CS_GPIO_Port GPIOC
+#define CTP_RST_Pin GPIO_PIN_8
+#define CTP_RST_GPIO_Port GPIOA
+#define CTP_INT_Pin GPIO_PIN_10
+#define CTP_INT_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 

@@ -1,7 +1,7 @@
 Dependencies for Project 'L4R5HardWare', Target 'L4R5HardWare': (DO NOT MODIFY !)
-F (startup_stm32l4r5xx.s)(0x66FA4DBE)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "STM32L4R5xx SETA 1"--list startup_stm32l4r5xx.lst --xref -o l4r5hardware\startup_stm32l4r5xx.o --depend l4r5hardware\startup_stm32l4r5xx.d)
-F (../Core/Src/main.c)(0x66FA50CF)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\main.o --omf_browse l4r5hardware\main.crf --depend l4r5hardware\main.d)
-I (../Core/Inc/main.h)(0x657E987A)
+F (startup_stm32l4r5xx.s)(0x66FA5B43)(--cpu Cortex-M4.fp -g --apcs=interwork -I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "STM32L4R5xx SETA 1"--list startup_stm32l4r5xx.lst --xref -o l4r5hardware\startup_stm32l4r5xx.o --depend l4r5hardware\startup_stm32l4r5xx.d)
+F (../Core/Src/main.c)(0x66FA5FAC)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\main.o --omf_browse l4r5hardware\main.crf --depend l4r5hardware\main.d)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -169,14 +169,14 @@ I (../LVGL/src/extra/libs/rlottie/lv_rlottie.h)(0x625406A5)
 I (../LVGL/src/extra/libs/ffmpeg/lv_ffmpeg.h)(0x625406A5)
 I (../LVGL/examples/porting/lv_port_disp_template.h)(0x66FA125B)
 I (../LVGL/examples/porting/lv_port_indev_template.h)(0x66FA0D36)
-I (..\LVGL\demos\stress\lv_demo_stress.h)(0x625406A5)
-I (..\LVGL\demos\stress\../lv_demos.h)(0x625406A5)
-I (..\LVGL\demos\stress\../stress/lv_demo_stress.h)(0x625406A5)
-I (..\LVGL\demos\stress\../music/lv_demo_music.h)(0x625406A5)
-I (..\LVGL\demos\stress\../music/../lv_demos.h)(0x625406A5)
-F (../Core/Src/gpio.c)(0x657E9A67)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\gpio.o --omf_browse l4r5hardware\gpio.crf --depend l4r5hardware\gpio.d)
+I (../LVGL/demos/stress/lv_demo_stress.h)(0x625406A5)
+I (../LVGL/demos/stress/../lv_demos.h)(0x625406A5)
+I (../LVGL/demos/stress/../stress/lv_demo_stress.h)(0x625406A5)
+I (../LVGL/demos/stress/../music/lv_demo_music.h)(0x625406A5)
+I (../LVGL/demos/stress/../music/../lv_demos.h)(0x625406A5)
+F (../Core/Src/gpio.c)(0x66FA5B3E)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\gpio.o --omf_browse l4r5hardware\gpio.crf --depend l4r5hardware\gpio.d)
 I (../Core/Inc/gpio.h)(0x6577D6A1)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -212,7 +212,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x66D2D52C)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x66D2D52C)
 F (../Core/Src/i2c.c)(0x657E77A1)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\i2c.o --omf_browse l4r5hardware\i2c.crf --depend l4r5hardware\i2c.d)
 I (../Core/Inc/i2c.h)(0x657E6D15)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -248,7 +248,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x66D2D52C)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x66D2D52C)
 F (../Core/Src/spi.c)(0x657E74AF)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\spi.o --omf_browse l4r5hardware\spi.crf --depend l4r5hardware\spi.d)
 I (../Core/Inc/spi.h)(0x6577DA9A)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -284,7 +284,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x66D2D52C)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x66D2D52C)
 F (../Core/Src/tim.c)(0x66FA4D92)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\tim.o --omf_browse l4r5hardware\tim.crf --depend l4r5hardware\tim.d)
 I (../Core/Inc/tim.h)(0x65781B3E)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -319,7 +319,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x66D2D52C)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x66D2D52C)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x66D2D52C)
 F (../Core/Src/stm32l4xx_it.c)(0x657EA1D2)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\stm32l4xx_it.o --omf_browse l4r5hardware\stm32l4xx_it.crf --depend l4r5hardware\stm32l4xx_it.d)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -355,7 +355,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x66D2D52C)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_it.h)(0x657EA1D2)
 F (../Core/Src/stm32l4xx_hal_msp.c)(0x6577D6A1)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\stm32l4xx_hal_msp.o --omf_browse l4r5hardware\stm32l4xx_hal_msp.crf --depend l4r5hardware\stm32l4xx_hal_msp.d)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -1072,7 +1072,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x66D2D52C)
 F (..\HARDWARE\GUI\GUI.c)(0x657E977C)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\gui.o --omf_browse l4r5hardware\gui.crf --depend l4r5hardware\gui.d)
 I (../HARDWARE/LCD/lcd.h)(0x657E94CB)
 I (../SYSTEM/sys/sys.h)(0x65745BAF)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -1116,7 +1116,7 @@ I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../HARDWARE/LCD/lcd.h)(0x657E94CB)
 I (../SYSTEM/sys/sys.h)(0x65745BAF)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -1154,13 +1154,13 @@ I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../SYSTEM/delay/delay.h)(0x6574599C)
 I (..\HARDWARE\GUI\gui.h)(0x65782256)
 I (..\HARDWARE\GUI\test.h)(0x6574846C)
-I (..\HARDWARE\TOUCH\touch.h)(0x6574846C)
-I (..\HARDWARE\TOUCH\ft6336.h)(0x6574846C)
+I (../HARDWARE/TOUCH/touch.h)(0x6574846C)
+I (../HARDWARE/TOUCH/ft6336.h)(0x6574846C)
 I (..\HARDWARE\GUI\pic.h)(0x63BE81FB)
 F (..\HARDWARE\LCD\lcd.c)(0x657E94A0)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\lcd.o --omf_browse l4r5hardware\lcd.crf --depend l4r5hardware\lcd.d)
 I (..\HARDWARE\LCD\lcd.h)(0x657E94CB)
 I (../SYSTEM/sys/sys.h)(0x65745BAF)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -1200,7 +1200,7 @@ I (../Core/Inc/spi.h)(0x6577DA9A)
 F (..\HARDWARE\TOUCH\ctpiic.c)(0x6575824E)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\ctpiic.o --omf_browse l4r5hardware\ctpiic.crf --depend l4r5hardware\ctpiic.d)
 I (..\HARDWARE\TOUCH\ctpiic.h)(0x65757968)
 I (../SYSTEM/sys/sys.h)(0x65745BAF)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -1238,7 +1238,7 @@ I (../SYSTEM/delay/delay.h)(0x6574599C)
 F (..\HARDWARE\TOUCH\ft6336.c)(0x657DC0F9)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\ft6336.o --omf_browse l4r5hardware\ft6336.crf --depend l4r5hardware\ft6336.d)
 I (..\HARDWARE\TOUCH\ft6336.h)(0x6574846C)
 I (../SYSTEM/sys/sys.h)(0x65745BAF)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -1282,7 +1282,7 @@ I (../Core/Inc/i2c.h)(0x657E6D15)
 F (..\HARDWARE\TOUCH\touch.c)(0x66FA2E8E)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\touch.o --omf_browse l4r5hardware\touch.crf --depend l4r5hardware\touch.d)
 I (..\HARDWARE\TOUCH\touch.h)(0x6574846C)
 I (../SYSTEM/sys/sys.h)(0x65745BAF)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -1321,10 +1321,10 @@ I (../HARDWARE/LCD/lcd.h)(0x657E94CB)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../SYSTEM/delay/delay.h)(0x6574599C)
 I (D:\Keil5\ARM\ARMCC\include\math.h)(0x588B8344)
-I (..\HARDWARE\GUI\gui.h)(0x65782256)
+I (../HARDWARE/GUI/gui.h)(0x65782256)
 F (..\SYSTEM\delay\delay.c)(0x65745C03)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\delay.o --omf_browse l4r5hardware\delay.crf --depend l4r5hardware\delay.d)
 I (..\SYSTEM\delay\delay.h)(0x6574599C)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -1361,7 +1361,7 @@ I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x66D2D52C)
 I (../Core/Inc/tim.h)(0x65781B3E)
 F (..\SYSTEM\sys\sys.c)(0x65745C1E)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\sys.o --omf_browse l4r5hardware\sys.crf --depend l4r5hardware\sys.d)
 I (..\SYSTEM\sys\sys.h)(0x65745BAF)
-I (../Core/Inc/main.h)(0x657E987A)
+I (../Core/Inc/main.h)(0x66FA5B40)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
 I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
 I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
@@ -12860,7 +12860,7 @@ I (../LVGL/src/extra/libs/rlottie/lv_rlottie.h)(0x625406A5)
 I (../LVGL/src/extra/libs/ffmpeg/lv_ffmpeg.h)(0x625406A5)
 I (../HARDWARE/GUI/gui.h)(0x65782256)
 F (..\LVGL\examples\porting\lv_port_fs_template.c)(0x61F7D6C5)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\lv_port_fs_template.o --omf_browse l4r5hardware\lv_port_fs_template.crf --depend l4r5hardware\lv_port_fs_template.d)
-F (..\LVGL\examples\porting\lv_port_indev_template.c)(0x66FA0E1B)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\lv_port_indev_template.o --omf_browse l4r5hardware\lv_port_indev_template.crf --depend l4r5hardware\lv_port_indev_template.d)
+F (..\LVGL\examples\porting\lv_port_indev_template.c)(0x66FA5F1D)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\lv_port_indev_template.o --omf_browse l4r5hardware\lv_port_indev_template.crf --depend l4r5hardware\lv_port_indev_template.d)
 I (..\LVGL\examples\porting\lv_port_indev_template.h)(0x66FA0D36)
 I (../LVGL/lvgl.h)(0x625406A5)
 I (../LVGL/src/misc/lv_log.h)(0x625406A5)
@@ -12984,6 +12984,41 @@ I (../LVGL/src/extra/libs/sjpg/lv_sjpg.h)(0x625406A5)
 I (../LVGL/src/extra/libs/freetype/lv_freetype.h)(0x625406A5)
 I (../LVGL/src/extra/libs/rlottie/lv_rlottie.h)(0x625406A5)
 I (../LVGL/src/extra/libs/ffmpeg/lv_ffmpeg.h)(0x625406A5)
+I (../HARDWARE/TOUCH/touch.h)(0x6574846C)
+I (../SYSTEM/sys/sys.h)(0x65745BAF)
+I (../Core/Inc/main.h)(0x66FA5B40)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h)(0x66D2D52C)
+I (../Core/Inc/stm32l4xx_hal_conf.h)(0x657E6D16)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h)(0x66D2D52C)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h)(0x66D2D52C)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4r5xx.h)(0x66D2D52C)
+I (../Drivers/CMSIS/Include/core_cm4.h)(0x66D2D4D6)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x66D2D4D6)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x66D2D4D6)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x66D2D4D6)
+I (../Drivers/CMSIS/Include/mpu_armv7.h)(0x66D2D4D6)
+I (../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma_ex.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_exti.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h)(0x66D2D52C)
+I (../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h)(0x66D2D52C)
+I (../HARDWARE/TOUCH/ft6336.h)(0x6574846C)
 F (..\LVGL\lv_conf.h)(0x66FA49B2)()
 F (..\LVGL\lvgl.h)(0x625406A5)()
 F (..\LVGL\demos\stress\lv_demo_stress.c)(0x625406A5)(--c99 -c --cpu Cortex-M4.fp -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc -I ../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I ../Drivers/CMSIS/Include -I ../HARDWARE/LCD -I ../SYSTEM/delay -I ../SYSTEM/sys -I ../HARDWARE/GUI -I ../HARDWARE/TOUCH -I ../LVGL -I ../LVGL/src -I ../LVGL/examples/porting -I ../LVGL/demos -I ../LVGL/demos/stress-I.\RTE\_L4R5HardWare-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\Core\Include-ID:\Keil5\ARM\PACK\Keil\STM32L4xx_DFP\2.6.2\Drivers\CMSIS\Device\ST\STM32L4xx\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32L4R5xx -DUSE_HAL_DRIVER -DSTM32L4R5xx-o l4r5hardware\lv_demo_stress.o --omf_browse l4r5hardware\lv_demo_stress.crf --depend l4r5hardware\lv_demo_stress.d)

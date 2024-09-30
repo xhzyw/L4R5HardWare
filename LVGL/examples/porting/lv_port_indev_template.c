@@ -11,7 +11,7 @@
  *********************/
 #include "lv_port_indev_template.h"
 #include "../../lvgl.h"
-
+#include "touch.h" 
 
 /*********************
  *      DEFINES
@@ -69,6 +69,7 @@ void lv_port_indev_init(void)
 static void touchpad_init(void)
 {
 //    tp_dev.init();
+	    TP_Init();
 }
 
 /*Will be called by the library to read the touchpad*/
@@ -97,6 +98,10 @@ static void touchpad_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
 static bool touchpad_is_pressed(void)
 {
 //    tp_dev.scan(0);
+			tp_dev.scan();
+			if((tp_dev.sta)&(1<<0)){
+					return true;
+			}
 //    if(tp_dev.sta & TP_PRES_DOWN)
 //    {
 //        return true;
@@ -109,8 +114,8 @@ static void touchpad_get_xy(lv_coord_t * x, lv_coord_t * y)
 {
     /*Your code comes here*/
 
-//    (*x) = tp_dev.x[0];
-//    (*y) = tp_dev.y[0];
+    (*x) = tp_dev.x[0];
+    (*y) = tp_dev.y[0];
 }
 
 #else /*Enable this file at the top*/
