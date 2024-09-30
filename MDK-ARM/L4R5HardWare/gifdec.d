@@ -1,0 +1,16 @@
+l4r5hardware\gifdec.o: ..\LVGL\src\extra\libs\gif\gifdec.c
+l4r5hardware\gifdec.o: ..\LVGL\src\extra\libs\gif\gifdec.h
+l4r5hardware\gifdec.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+l4r5hardware\gifdec.o: ..\LVGL\src\extra\libs\gif\../../../misc/lv_fs.h
+l4r5hardware\gifdec.o: ..\LVGL\src\extra\libs\gif\../../../misc/../lv_conf_internal.h
+l4r5hardware\gifdec.o: ..\LVGL\src\extra\libs\gif\../../../misc/../lv_conf_kconfig.h
+l4r5hardware\gifdec.o: ../LVGL/examples/porting/../../lv_conf.h
+l4r5hardware\gifdec.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+l4r5hardware\gifdec.o: ..\LVGL\src\extra\libs\gif\../../../misc/lv_log.h
+l4r5hardware\gifdec.o: ..\LVGL\src\extra\libs\gif\../../../misc/lv_types.h
+l4r5hardware\gifdec.o: ..\LVGL\src\extra\libs\gif\../../../misc/lv_mem.h
+l4r5hardware\gifdec.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+l4r5hardware\gifdec.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+l4r5hardware\gifdec.o: ..\LVGL\src\extra\libs\gif\../../../misc/lv_color.h
+l4r5hardware\gifdec.o: ..\LVGL\src\extra\libs\gif\../../../misc/lv_assert.h
+l4r5hardware\gifdec.o: ..\LVGL\src\extra\libs\gif\../../../misc/lv_math.h
