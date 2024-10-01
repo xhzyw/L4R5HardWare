@@ -124,6 +124,7 @@ l4r5hardware\lv_demo_stress.o: ..\LVGL\demos\stress\../../src/extra/libs/sjpg/lv
 l4r5hardware\lv_demo_stress.o: ..\LVGL\demos\stress\../../src/extra/libs/freetype/lv_freetype.h
 l4r5hardware\lv_demo_stress.o: ..\LVGL\demos\stress\../../src/extra/libs/rlottie/lv_rlottie.h
 l4r5hardware\lv_demo_stress.o: ..\LVGL\demos\stress\../../src/extra/libs/ffmpeg/lv_ffmpeg.h
+l4r5hardware\lv_demo_stress.o: ..\LVGL\demos\stress\../widgets/lv_demo_widgets.h
+l4r5hardware\lv_demo_stress.o: ..\LVGL\demos\stress\../widgets/../lv_demos.h
 l4r5hardware\lv_demo_stress.o: ..\LVGL\demos\stress\../stress/lv_demo_stress.h
 l4r5hardware\lv_demo_stress.o: ..\LVGL\demos\stress\../music/lv_demo_music.h
-l4r5hardware\lv_demo_stress.o: ..\LVGL\demos\stress\../music/../lv_demos.h

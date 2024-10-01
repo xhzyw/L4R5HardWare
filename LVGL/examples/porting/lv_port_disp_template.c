@@ -12,7 +12,8 @@
 #include "lv_port_disp_template.h"
 #include "lvgl.h"
 #include "gui.h"
-
+#include "spi.h"
+#include "stm32l4r5xx.h"
 /*********************
  *      DEFINES
  *********************/
@@ -55,15 +56,15 @@ void lv_port_disp_init(void)
 
 
     /* Example for 1) */
-    static lv_disp_draw_buf_t draw_buf_dsc_1;
-    static lv_color_t buf_1[800 * 60];                          /*A buffer for 10 rows*/
-    lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, 800 * 60);   /*Initialize the display buffer*/
+//    static lv_disp_draw_buf_t draw_buf_dsc_1;
+//    static lv_color_t buf_1[800 * 100];                          /*A buffer for 10 rows*/
+//    lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, 800 * 100);   /*Initialize the display buffer*/
 
     /* Example for 2) */
-//    static lv_disp_draw_buf_t draw_buf_dsc_2;
-//    static lv_color_t buf_2_1[MY_DISP_HOR_RES * 10];                        /*A buffer for 10 rows*/
-//    static lv_color_t buf_2_2[MY_DISP_HOR_RES * 10];                        /*An other buffer for 10 rows*/
-//    lv_disp_draw_buf_init(&draw_buf_dsc_2, buf_2_1, buf_2_2, MY_DISP_HOR_RES * 10);   /*Initialize the display buffer*/
+    static lv_disp_draw_buf_t draw_buf_dsc_2;
+    static lv_color_t buf_2_1[800 * 80];                        /*A buffer for 10 rows*/
+    static lv_color_t buf_2_2[800 * 80];                        /*An other buffer for 10 rows*/
+    lv_disp_draw_buf_init(&draw_buf_dsc_2, buf_2_1, buf_2_2, 800 * 80);   /*Initialize the display buffer*/
 
     /* Example for 3) also set disp_drv.full_refresh = 1 below*/
 //    static lv_disp_draw_buf_t draw_buf_dsc_3;
@@ -81,14 +82,14 @@ void lv_port_disp_init(void)
     /*Set up the functions to access to your display*/
 
     /*Set the resolution of the display*/
-    disp_drv.hor_res = 320;
-    disp_drv.ver_res = 480;
+    disp_drv.hor_res = 480;
+    disp_drv.ver_res = 320;
 
     /*Used to copy the buffer's content to the display*/
     disp_drv.flush_cb = disp_flush;
 
     /*Set a display buffer*/
-    disp_drv.draw_buf = &draw_buf_dsc_1;
+    disp_drv.draw_buf = &draw_buf_dsc_2;
 
     /*Required for Example 3)*/
     //disp_drv.full_refresh = 1
@@ -102,19 +103,41 @@ void lv_port_disp_init(void)
     lv_disp_drv_register(&disp_drv);
 }
 
-void lvgl_LCD_Color_Fill(uint16_t sx,uint16_t sy,uint16_t ex,uint16_t ey,lv_color_t* color)
+void LCD_Address_Set(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2)
 {
+	LCD_WR_REG(0x2a);//列地址设置
+	LCD_WR_DATA(x1);
+	LCD_WR_DATA(x2);
+	LCD_WR_REG(0x2b);//行地址设置
+	LCD_WR_DATA(y1);
+	LCD_WR_DATA(y2);
+	LCD_WR_REG(0x2c);//储存器写
+}
+
+extern DMA_HandleTypeDef hdma_spi1_tx;
+void lvgl_LCD_Color_Fill(uint16_t sx,uint16_t sy,uint16_t ex,uint16_t ey,uint16_t *color_p)
+{
+//	uint32_t y=0;
+//	uint16_t height,width;
+//	width = ex - sx + 1;
+//	height = ey - sy + 1;
+//	LCD_SetWindows(sx,sy,ex,ey);
+	
 	uint32_t y=0;
 	uint16_t height,width;
 	width = ex - sx + 1;
 	height = ey - sy + 1;
-	LCD_SetWindows(sx,sy,ex,ey);
+	uint32_t size = width * height;
 	
-	for(y = 0;y < width * height; y++)
-	{
-		 Lcd_WriteData_16Bit(color->full);
-		 color++;
-	}
+	LCD_Address_Set(sx,sy,ex,ey);
+	
+//	hspi1.Init.DataSize = SPI_DATASIZE_16BIT;
+//	hspi1.Instance->CR1|=SPI_CR1_CRCL;
+	HAL_SPI_Transmit_DMA(&hspi1,(uint8_t*)color_p,size);
+//	while(__HAL_DMA_GET_COUNTER(&hdma_spi1_tx)!=0);
+//	
+//	hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
+//	hspi1.Instance->CR1&=~SPI_CR1_CRCL;
 }
 
 
@@ -136,7 +159,9 @@ static void disp_init(void)
 static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p)
 {
    // lcd_color_fill(area->x1, area->y1, area->x2, area->y2, (uint16_t*)color_p);
-	  lvgl_LCD_Color_Fill(area->x1, area->y1, area->x2, area->y2, color_p);
+	  //lvgl_LCD_Color_Fill(area->x1, area->y1, area->x2, area->y2, color_p);
+   extern void LCD_UpdatePart(uint16_t xStart, uint16_t yStart, uint16_t xEnd, uint16_t yEnd, uint16_t* colorBuffer);
+		LCD_UpdatePart(area->x1,area->y1,area->x2,area->y2,(uint16_t*)&color_p->full);
     lv_disp_flush_ready(disp_drv);
 }
 

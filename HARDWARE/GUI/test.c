@@ -464,14 +464,13 @@ void Test_Read(void)
 	uint8_t buf[10] = {0},i;
 	uint8_t cbuf[35] = {0};
 	DrawTestPage("≤‚ ‘2:∂¡ID∫Õ—’…´÷µ≤‚ ‘");
-	lcd_id = LCD_Read_ID();
+	//lcd_id = LCD_Read_ID();
 	sprintf((char *)buf,"ID:0x%x",lcd_id);
 	Show_Str(50,25,BLUE,YELLOW,buf,16,1);
 	for (i=0; i<7; i++) 
 	{
 		POINT_COLOR=ColornTab[i];
 		LCD_DrawFillRectangle(20-10,55+i*25-10,20+10,55+i*25+10);
-		color = LCD_ReadPoint(20,55+i*25);
 		if(POINT_COLOR==color)
 		{
 			strcpy((char*)buf, "OK");

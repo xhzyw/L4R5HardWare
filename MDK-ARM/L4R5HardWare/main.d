@@ -34,6 +34,7 @@ l4r5hardware\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi.h
 l4r5hardware\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h
 l4r5hardware\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim.h
 l4r5hardware\main.o: ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h
+l4r5hardware\main.o: ../Core/Inc/dma.h
 l4r5hardware\main.o: ../Core/Inc/i2c.h
 l4r5hardware\main.o: ../Core/Inc/spi.h
 l4r5hardware\main.o: ../Core/Inc/tim.h
@@ -169,8 +170,9 @@ l4r5hardware\main.o: ../LVGL/src/extra/libs/rlottie/lv_rlottie.h
 l4r5hardware\main.o: ../LVGL/src/extra/libs/ffmpeg/lv_ffmpeg.h
 l4r5hardware\main.o: ../LVGL/examples/porting/lv_port_disp_template.h
 l4r5hardware\main.o: ../LVGL/examples/porting/lv_port_indev_template.h
-l4r5hardware\main.o: ../LVGL/demos/stress/lv_demo_stress.h
-l4r5hardware\main.o: ../LVGL/demos/stress/../lv_demos.h
-l4r5hardware\main.o: ../LVGL/demos/stress/../stress/lv_demo_stress.h
-l4r5hardware\main.o: ../LVGL/demos/stress/../music/lv_demo_music.h
-l4r5hardware\main.o: ../LVGL/demos/stress/../music/../lv_demos.h
+l4r5hardware\main.o: ../LVGL/demos/widgets/lv_demo_widgets.h
+l4r5hardware\main.o: ../LVGL/demos/widgets/../lv_demos.h
+l4r5hardware\main.o: ../LVGL/demos/widgets/../widgets/lv_demo_widgets.h
+l4r5hardware\main.o: ../LVGL/demos/widgets/../stress/lv_demo_stress.h
+l4r5hardware\main.o: ../LVGL/demos/widgets/../stress/../lv_demos.h
+l4r5hardware\main.o: ../LVGL/demos/widgets/../music/lv_demo_music.h

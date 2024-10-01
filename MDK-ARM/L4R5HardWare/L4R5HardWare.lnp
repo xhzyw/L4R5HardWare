@@ -2,6 +2,7 @@
 "l4r5hardware\startup_stm32l4r5xx.o"
 "l4r5hardware\main.o"
 "l4r5hardware\gpio.o"
+"l4r5hardware\dma.o"
 "l4r5hardware\i2c.o"
 "l4r5hardware\spi.o"
 "l4r5hardware\tim.o"
@@ -204,6 +205,10 @@
 "l4r5hardware\lv_port_fs_template.o"
 "l4r5hardware\lv_port_indev_template.o"
 "l4r5hardware\lv_demo_stress.o"
+"l4r5hardware\lv_demo_widgets.o"
+"l4r5hardware\img_clothes.o"
+"l4r5hardware\img_demo_widgets_avatar.o"
+"l4r5hardware\img_lvgl_logo.o"
 --strict --scatter "L4R5HardWare\L4R5HardWare.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

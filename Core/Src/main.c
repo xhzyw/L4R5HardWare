@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "i2c.h"
 #include "spi.h"
 #include "tim.h"
@@ -34,8 +35,8 @@
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
 #include "lv_port_indev_template.h"
+#include "lv_demo_widgets.h"
 #include "lv_demo_stress.h"
-//#include "lv_demo_stress.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -68,53 +69,6 @@ static void MX_NVIC_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-static void anim_x_cb(void * var, int32_t v)
-{
-    lv_obj_set_x(var, v);
-}
-
-static void sw_event_cb(lv_event_t * e)
-{
-    lv_obj_t * sw = lv_event_get_target(e);
-    lv_obj_t * label = lv_event_get_user_data(e);
-
-    if(lv_obj_has_state(sw, LV_STATE_CHECKED)) {
-        lv_anim_t a;
-        lv_anim_init(&a);
-        lv_anim_set_var(&a, label);
-        lv_anim_set_values(&a, lv_obj_get_x(label), 100);
-        lv_anim_set_time(&a, 500);
-        lv_anim_set_exec_cb(&a, anim_x_cb);
-        lv_anim_set_path_cb(&a, lv_anim_path_overshoot);
-        lv_anim_start(&a);
-    }
-    else {
-        lv_anim_t a;
-        lv_anim_init(&a);
-        lv_anim_set_var(&a, label);
-        lv_anim_set_values(&a, lv_obj_get_x(label), -lv_obj_get_width(label));
-        lv_anim_set_time(&a, 500);
-        lv_anim_set_exec_cb(&a, anim_x_cb);
-        lv_anim_set_path_cb(&a, lv_anim_path_ease_in);
-        lv_anim_start(&a);
-    }
-
-}
-
-/**
- * Start animation on an event
- */
-void lv_example_anim_1(void)
-{
-    lv_obj_t * label = lv_label_create(lv_scr_act());
-    lv_label_set_text(label, "Hello animations!");
-    lv_obj_set_pos(label, 100, 10);
-
-    lv_obj_t * sw = lv_switch_create(lv_scr_act());
-    lv_obj_center(sw);
-    lv_obj_add_state(sw, LV_STATE_CHECKED);
-    lv_obj_add_event_cb(sw, sw_event_cb, LV_EVENT_VALUE_CHANGED, label);
-}
 
 /* USER CODE END 0 */
 
@@ -146,6 +100,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_SPI1_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
@@ -155,6 +110,7 @@ int main(void)
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
 	LCD_Init();
+	LCD_direction(1);
 	//TP_Init();
 	// 清除定时器初始化过程中的更新中断标志，避免定时器一启动就中断
 	__HAL_TIM_CLEAR_IT(&htim3, TIM_IT_UPDATE);		
@@ -163,10 +119,10 @@ int main(void)
 	lv_init(); 
 	lv_port_disp_init(); 
 	lv_port_indev_init();
-
+	lv_demo_widgets();
 	//lv_demo_stress();
   /* USER CODE END 2 */
-	lv_example_anim_1();
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -174,6 +130,8 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+		HAL_Delay(5);
+		lv_timer_handler();
   }
   /* USER CODE END 3 */
 }
@@ -248,7 +206,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	// 判断是定时器3发生的中断
 	if(htim->Instance == TIM3)
 	{
-			lv_timer_handler();
 			lv_tick_inc(1);
 	}
 }

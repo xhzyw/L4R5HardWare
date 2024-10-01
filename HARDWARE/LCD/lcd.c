@@ -64,33 +64,27 @@ _lcd_dev lcddev;
 //画笔颜色,背景颜色
 uint16_t POINT_COLOR = 0x0000,BACK_COLOR = 0xFFFF;  
 uint16_t DeviceCode;	 
-
+extern DMA_HandleTypeDef hdma_spi1_tx;
+void LCD_GPIO_Init(void)
+{
+	GPIO_InitTypeDef  GPIO_InitStructure = {0};
+	
+ 	__HAL_RCC_GPIOC_CLK_ENABLE();
+	
+	GPIO_InitStructure.Pin = RES_PIN|CS_PIN|DC_PIN;	 
+ 	GPIO_InitStructure.Mode = GPIO_MODE_OUTPUT_PP; 		 //推挽输出
+	GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_VERY_HIGH;//速度50MHz
+ 	HAL_GPIO_Init(GPIOC, &GPIO_InitStructure);	  //初始化GPIOB
+ 	HAL_GPIO_WritePin(GPIOC, RES_PIN|CS_PIN|DC_PIN, GPIO_PIN_SET);
+}
 
 
 uint8_t SPI_WriteByte(uint8_t Byte)
 {
 	  uint8_t data;
-		HAL_SPI_TransmitReceive(&hspi1,&Byte,&data,1,0xffff);
+		HAL_SPI_Transmit(&hspi1,&Byte,1,1);
 		return data; 
 } 
-
-/*****************************************************************************
- * @name       :void SPI_SetSpeed(SPI_TypeDef* SPIx,uint8_t SpeedSet)
- * @date       :2018-08-09 
- * @function   :Set hardware SPI Speed
- * @parameters :SPIx: SPI type,x for 1,2,3
-                SpeedSet:0-high speed
-												 1-low speed
- * @retvalue   :None
-******************************************************************************/
-void SPI_SetSpeed(uint8_t SpeedSet)
-{
-
-} 
-
-
-
-
 /*****************************************************************************
  * @name       :void LCD_WR_REG(uint8_t data)
  * @date       :2018-08-09 
@@ -124,12 +118,12 @@ void LCD_WR_DATA(uint8_t data)
 uint8_t LCD_RD_DATA(void)
 {
 	 uint8_t data;
-	 LCD_CS_CLR;
-	 LCD_RS_SET;
-	 SPI_SetSpeed(0);
-	 data = SPI_WriteByte(0xFF);
-	 SPI_SetSpeed(1);
-	 LCD_CS_SET;
+//	 LCD_CS_CLR;
+//	 LCD_RS_SET;
+//	 //SPI_SetSpeed(0);
+//	 data = SPI_WriteByte(0xFF);
+//	 //SPI_SetSpeed(1);
+//	 LCD_CS_SET;
 	 return data;
 }
 
@@ -187,24 +181,6 @@ void Lcd_WriteData_16Bit(uint16_t Data)
    LCD_CS_SET;
 }
 
-uint16_t Lcd_ReadData_16Bit(void)
-{
-	uint16_t r,g;
-	LCD_CS_CLR;
-	LCD_RS_CLR;	  
-	SPI_WriteByte(lcddev.rramcmd);
-	SPI_SetSpeed(0);
-	LCD_RS_SET;
-	SPI_WriteByte(0xFF);
-	r = SPI_WriteByte(0xFF);
-	g = SPI_WriteByte(0xFF);
-	SPI_SetSpeed(1);
-	LCD_CS_SET;
-	r<<=8;
-	r|=g;
-	return r;
-}
-
 /*****************************************************************************
  * @name       :void LCD_DrawPoint(uint16_t x,uint16_t y)
  * @date       :2018-08-09 
@@ -219,13 +195,7 @@ void LCD_DrawPoint(uint16_t x,uint16_t y)
 	Lcd_WriteData_16Bit(POINT_COLOR); 
 }
 
-uint16_t LCD_ReadPoint(uint16_t x,uint16_t y)
-{
-	uint16_t color;
-	LCD_SetCursor(x,y);//设置光标位置 
-	color = Lcd_ReadData_16Bit();
-	return color;
-}
+
 
 /*****************************************************************************
  * @name       :void LCD_Clear(uint16_t Color)
@@ -287,115 +257,203 @@ void LCD_RESET(void)
 ******************************************************************************/	 	 
 void LCD_Init(void)
 {  
-	LCD_GPIOInit();//LCD GPIO初始化										 
-	LCD_RESET(); //LCD 复位
-//*************3.5 ST7796S IPS初始化**********//	
+	//LCD_GPIOInit();//LCD GPIO初始化			
+//  LCD_GPIO_Init();	
+//	LCD_RESET(); //LCD 复位
+////*************3.5 ST7796S IPS初始化**********//	
 //	LCD_CS_SET;
 //	LCD_RS_SET;
-	//
-	LCD_WR_REG(0x11);     
+//	//
+//	LCD_WR_REG(0x11);     
 
-	delay_ms(120);                //Delay 120ms
+//	delay_ms(120);                //Delay 120ms
 
-	LCD_WR_REG(0x36);     // Memory Data Access Control MY,MX~~
+//	LCD_WR_REG(0x36);     // Memory Data Access Control MY,MX~~
 
-	LCD_WR_DATA(0x48);   
+//	LCD_WR_DATA(0x48);   
 
-	LCD_WR_REG(0x3A);     
+//	LCD_WR_REG(0x3A);     
 
-	LCD_WR_DATA(0x55);   //LCD_WR_DATA(0x66);
+//	LCD_WR_DATA(0x55);   //LCD_WR_DATA(0x66);
 
-	LCD_WR_REG(0xF0);     // Command Set Control
+//	LCD_WR_REG(0xF0);     // Command Set Control
 
-	LCD_WR_DATA(0xC3);   
+//	LCD_WR_DATA(0xC3);   
 
-	LCD_WR_REG(0xF0);     
+//	LCD_WR_REG(0xF0);     
 
-	LCD_WR_DATA(0x96);   
+//	LCD_WR_DATA(0x96);   
 
-	LCD_WR_REG(0xB4);  
+//	LCD_WR_REG(0xB4);  
 
-	LCD_WR_DATA(0x01);   
+//	LCD_WR_DATA(0x01);   
 
-	LCD_WR_REG(0xB7);   
- 
-	LCD_WR_DATA(0xC6);   
+//	LCD_WR_REG(0xB7);   
+// 
+//	LCD_WR_DATA(0xC6);   
 
-	//LCD_WR_REG(0xB9);     
-	//LCD_WR_DATA(0x02);
-	//LCD_WR_DATA(0xE0);
+//	//LCD_WR_REG(0xB9);     
+//	//LCD_WR_DATA(0x02);
+//	//LCD_WR_DATA(0xE0);
 
-	LCD_WR_REG(0xC0);   
- 
-	LCD_WR_DATA(0x80);  
+//	LCD_WR_REG(0xC0);   
+// 
+//	LCD_WR_DATA(0x80);  
 
-	LCD_WR_DATA(0x45);   
+//	LCD_WR_DATA(0x45);   
 
-	LCD_WR_REG(0xC1);  
+//	LCD_WR_REG(0xC1);  
 
-	LCD_WR_DATA(0x13);   //18  //00
+//	LCD_WR_DATA(0x13);   //18  //00
 
-	LCD_WR_REG(0xC2);    
+//	LCD_WR_REG(0xC2);    
 
-	LCD_WR_DATA(0xA7);   
+//	LCD_WR_DATA(0xA7);   
 
-	LCD_WR_REG(0xC5);    
+//	LCD_WR_REG(0xC5);    
+//	
+//	LCD_WR_DATA(0x0A);   
+
+//	LCD_WR_REG(0xE8);   
+// 
+//	LCD_WR_DATA(0x40);
+//	LCD_WR_DATA(0x8A);
+//	LCD_WR_DATA(0x00);
+//	LCD_WR_DATA(0x00);
+//	LCD_WR_DATA(0x29);
+//	LCD_WR_DATA(0x19);
+//	LCD_WR_DATA(0xA5);
+//	LCD_WR_DATA(0x33);
+
+//	LCD_WR_REG(0xE0);
+//	LCD_WR_DATA(0xD0);
+//	LCD_WR_DATA(0x08);
+//	LCD_WR_DATA(0x0F);
+//	LCD_WR_DATA(0x06);
+//	LCD_WR_DATA(0x06);
+//	LCD_WR_DATA(0x33);
+//	LCD_WR_DATA(0x30);
+//	LCD_WR_DATA(0x33);
+//	LCD_WR_DATA(0x47);
+//	LCD_WR_DATA(0x17);
+//	LCD_WR_DATA(0x13);
+//	LCD_WR_DATA(0x13);
+//	LCD_WR_DATA(0x2B);
+//	LCD_WR_DATA(0x31);
+
+//	LCD_WR_REG(0xE1);
+//	LCD_WR_DATA(0xD0);
+//	LCD_WR_DATA(0x0A);
+//	LCD_WR_DATA(0x11);
+//	LCD_WR_DATA(0x0B);
+//	LCD_WR_DATA(0x09);
+//	LCD_WR_DATA(0x07);
+//	LCD_WR_DATA(0x2F);
+//	LCD_WR_DATA(0x33);
+//	LCD_WR_DATA(0x47);
+//	LCD_WR_DATA(0x38);
+//	LCD_WR_DATA(0x15);
+//	LCD_WR_DATA(0x16);
+//	LCD_WR_DATA(0x2C);
+//	LCD_WR_DATA(0x32);
+
+
+//	LCD_WR_REG(0xF0);     
+//	LCD_WR_DATA(0x3C);   
+
+//	LCD_WR_REG(0xF0);     
+//	LCD_WR_DATA(0x69);   
+
+//	delay_ms(120);                
+
+//	LCD_WR_REG(0x21);     
+
+//	LCD_WR_REG(0x29); 
 	
-	LCD_WR_DATA(0x0A);   
+	
+	
+	LCD_GPIO_Init();//初始化GPIO
+	LCD_RESET(); //LCD 复位
+//*************3.5 ST7796S IPS初始化**********//	
+	LCD_CS_SET;
+	LCD_RS_SET;
+	
+	LCD_WR_REG(0x11); 
+	delay_ms(120); 
+	LCD_WR_REG(0x36); 
+	if(USE_HORIZONTAL==0)LCD_WR_DATA(0x00);
+	else if(USE_HORIZONTAL==1)LCD_WR_DATA(0xC0);
+	else if(USE_HORIZONTAL==2)LCD_WR_DATA(0x70);
+	else LCD_WR_DATA(0xA0);
 
-	LCD_WR_REG(0xE8);   
- 
-	LCD_WR_DATA(0x40);
-	LCD_WR_DATA(0x8A);
+	LCD_WR_REG(0x3A);
+	LCD_WR_DATA(0x05);
+
+	LCD_WR_REG(0xB2);
+	LCD_WR_DATA(0x0C);
+	LCD_WR_DATA(0x0C);
 	LCD_WR_DATA(0x00);
-	LCD_WR_DATA(0x00);
-	LCD_WR_DATA(0x29);
-	LCD_WR_DATA(0x19);
-	LCD_WR_DATA(0xA5);
 	LCD_WR_DATA(0x33);
+	LCD_WR_DATA(0x33); 
+
+	LCD_WR_REG(0xB7); 
+	LCD_WR_DATA(0x35);  
+
+	LCD_WR_REG(0xBB);
+	LCD_WR_DATA(0x19);
+
+	LCD_WR_REG(0xC0);
+	LCD_WR_DATA(0x2C);
+
+	LCD_WR_REG(0xC2);
+	LCD_WR_DATA(0x01);
+
+	LCD_WR_REG(0xC3);
+	LCD_WR_DATA(0x12);   
+
+	LCD_WR_REG(0xC4);
+	LCD_WR_DATA(0x20);  
+
+	LCD_WR_REG(0xC6); 
+	LCD_WR_DATA(0x0F);    
+
+	LCD_WR_REG(0xD0); 
+	LCD_WR_DATA(0xA4);
+	LCD_WR_DATA(0xA1);
 
 	LCD_WR_REG(0xE0);
 	LCD_WR_DATA(0xD0);
-	LCD_WR_DATA(0x08);
-	LCD_WR_DATA(0x0F);
-	LCD_WR_DATA(0x06);
-	LCD_WR_DATA(0x06);
-	LCD_WR_DATA(0x33);
-	LCD_WR_DATA(0x30);
-	LCD_WR_DATA(0x33);
-	LCD_WR_DATA(0x47);
-	LCD_WR_DATA(0x17);
-	LCD_WR_DATA(0x13);
+	LCD_WR_DATA(0x04);
+	LCD_WR_DATA(0x0D);
+	LCD_WR_DATA(0x11);
 	LCD_WR_DATA(0x13);
 	LCD_WR_DATA(0x2B);
-	LCD_WR_DATA(0x31);
+	LCD_WR_DATA(0x3F);
+	LCD_WR_DATA(0x54);
+	LCD_WR_DATA(0x4C);
+	LCD_WR_DATA(0x18);
+	LCD_WR_DATA(0x0D);
+	LCD_WR_DATA(0x0B);
+	LCD_WR_DATA(0x1F);
+	LCD_WR_DATA(0x23);
 
 	LCD_WR_REG(0xE1);
 	LCD_WR_DATA(0xD0);
-	LCD_WR_DATA(0x0A);
+	LCD_WR_DATA(0x04);
+	LCD_WR_DATA(0x0C);
 	LCD_WR_DATA(0x11);
-	LCD_WR_DATA(0x0B);
-	LCD_WR_DATA(0x09);
-	LCD_WR_DATA(0x07);
-	LCD_WR_DATA(0x2F);
-	LCD_WR_DATA(0x33);
-	LCD_WR_DATA(0x47);
-	LCD_WR_DATA(0x38);
-	LCD_WR_DATA(0x15);
-	LCD_WR_DATA(0x16);
+	LCD_WR_DATA(0x13);
 	LCD_WR_DATA(0x2C);
-	LCD_WR_DATA(0x32);
+	LCD_WR_DATA(0x3F);
+	LCD_WR_DATA(0x44);
+	LCD_WR_DATA(0x51);
+	LCD_WR_DATA(0x2F);
+	LCD_WR_DATA(0x1F);
+	LCD_WR_DATA(0x1F);
+	LCD_WR_DATA(0x20);
+	LCD_WR_DATA(0x23);
 
-
-	LCD_WR_REG(0xF0);     
-	LCD_WR_DATA(0x3C);   
-
-	LCD_WR_REG(0xF0);     
-	LCD_WR_DATA(0x69);   
-
-	delay_ms(120);                
-
-	LCD_WR_REG(0x21);     
+	LCD_WR_REG(0x21); 
 
 	LCD_WR_REG(0x29); 
 
@@ -415,20 +473,55 @@ void LCD_Init(void)
 ******************************************************************************/ 
 void LCD_SetWindows(uint16_t xStar, uint16_t yStar,uint16_t xEnd,uint16_t yEnd)
 {	
-	LCD_WR_REG(lcddev.setxcmd);	
+	LCD_WR_REG(0x2a);	
 	LCD_WR_DATA(xStar>>8);
 	LCD_WR_DATA(0x00FF&xStar);		
 	LCD_WR_DATA(xEnd>>8);
 	LCD_WR_DATA(0x00FF&xEnd);
 
-	LCD_WR_REG(lcddev.setycmd);	
+	LCD_WR_REG(0x2b);	
 	LCD_WR_DATA(yStar>>8);
 	LCD_WR_DATA(0x00FF&yStar);		
 	LCD_WR_DATA(yEnd>>8);
 	LCD_WR_DATA(0x00FF&yEnd);
+	LCD_WR_REG(0x2c);//储存器写
 
-	LCD_WriteRAM_Prepare();	//开始写入GRAM			
+	  //LCD_WriteRAM_Prepare();	//开始写入GRAM			
 }   
+
+
+void LCD_UpdatePart(uint16_t xStart, uint16_t yStart, uint16_t xEnd, uint16_t yEnd, uint16_t* colorBuffer) {
+	
+		uint16_t i,j,width,height; 
+		width = xEnd-xStart+1;
+		height = yEnd-yStart+1;
+		uint32_t size = width * height;
+    // Step 1: 设置LCD的显示窗口为需要更新的区域
+    LCD_SetWindows(xStart, yStart, xEnd, yEnd);
+
+    // Step 2: 写入更新的数据到LCD (写入颜色数据到GRAM)
+    LCD_CS_CLR;      // 选择LCD（片选拉低）
+    LCD_RS_SET;      // 设置为写数据模式
+
+    // 遍历窗口内的每一个像素并进行更新
+//    for(uint16_t y = yStart; y <= yEnd; y++) {
+//        for(uint16_t x = xStart; x <= xEnd; x++) {
+//            // 从缓存中获取对应位置的颜色值
+//            uint16_t color = *colorBuffer++;
+//            // 分两次写入16位颜色值
+//            SPI_WriteByte(color >> 8); // 高字节
+//            SPI_WriteByte(color);      // 低字节
+//        }
+//    }
+		hspi1.Init.DataSize = SPI_DATASIZE_16BIT;
+		//hspi1.Instance->CR1|=SPI_CR1_DFF;
+		HAL_SPI_Transmit_DMA(&hspi1,(uint8_t*)colorBuffer,size);
+		while(__HAL_DMA_GET_COUNTER(&hdma_spi1_tx)!=0);
+
+		hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
+		//hspi1.Instance->CR1&=~SPI_CR1_DFF;
+    LCD_CS_SET;      // 取消选择LCD（片选拉高）
+}
 
 /*****************************************************************************
  * @name       :void LCD_SetCursor(uint16_t Xpos, uint16_t Ypos)
@@ -484,40 +577,3 @@ void LCD_direction(uint8_t direction)
 		default:break;
 	}	
 }	 
-
-uint16_t LCD_Read_ID(void)
-{
-	uint8_t i,val[3] = {0};
-	LCD_WR_REG(0xF0);     // Command Set Control
-	LCD_WR_DATA(0xC3);   
-
-	LCD_WR_REG(0xF0);     
-	LCD_WR_DATA(0x96);  
-	LCD_CS_CLR;
-	for(i=1;i<4;i++)
-	{
-		LCD_RS_CLR;	  
-		SPI_WriteByte(0xFB);
-		LCD_RS_SET;
-		SPI_WriteByte(0x10+i);
-		LCD_RS_CLR;	  
-		SPI_WriteByte(0xD3);
-		SPI_SetSpeed(0);
-		LCD_RS_SET;
-		val[i-1] = SPI_WriteByte(0xFF);
-		SPI_SetSpeed(1);
-		LCD_RS_CLR;	  
-		SPI_WriteByte(0xFB);
-		LCD_RS_SET;
-		SPI_WriteByte(0x00);	
-	}
-	LCD_CS_SET;
-	LCD_WR_REG(0xF0);     // Command Set Control
-	LCD_WR_DATA(0x3C);   
-	LCD_WR_REG(0xF0);     
-	LCD_WR_DATA(0x69);  
-	lcddev.id=val[1];
-	lcddev.id<<=8;
-	lcddev.id|=val[2];
-	return lcddev.id;
-}

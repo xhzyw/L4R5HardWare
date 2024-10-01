@@ -105,7 +105,21 @@ extern uint16_t  BACK_COLOR; //背景颜色.默认为白色
 //GPIO复位（拉低）							    
 #define	LCD_CS_CLR  GPIO_TYPE->BRR=1<<LCD_CS     //片选端口  
 #define	LCD_RS_CLR	GPIO_TYPE->BRR=1<<LCD_RS     //数据/命令 	 
-#define	LCD_RST_CLR	GPIO_TYPE->BRR=1<<LCD_RST    //复位			  
+#define	LCD_RST_CLR	GPIO_TYPE->BRR=1<<LCD_RST    //复位	
+
+
+#define RES_PORT			GPIOC
+#define RES_PIN				GPIO_PIN_8
+
+#define DC_PORT				GPIOC
+#define DC_PIN				GPIO_PIN_7
+
+#define CS_PORT				GPIOC
+#define CS_PIN				GPIO_PIN_9
+
+#define BLK_PORT			GPIOC
+#define BLK_PIN				GPIO_PIN_6
+
 
 //画笔颜色
 #define WHITE       0xFFFF
@@ -137,12 +151,12 @@ extern uint16_t  BACK_COLOR; //背景颜色.默认为白色
 #define LBBLUE          0X2B12 //浅棕蓝色(选择条目的反色)
 	    															  
 void LCD_Init(void);
+void LCD_GPIO_Init(void);//初始化GPIO
 void LCD_DisplayOn(void);
 void LCD_DisplayOff(void);
 void LCD_Clear(uint16_t Color);	 
 void LCD_SetCursor(uint16_t Xpos, uint16_t Ypos);
 void LCD_DrawPoint(uint16_t x,uint16_t y);//画点
-uint16_t  LCD_ReadPoint(uint16_t x,uint16_t y); //读点
 void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
 void LCD_DrawRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);		   
 void LCD_SetWindows(uint16_t xStar, uint16_t yStar,uint16_t xEnd,uint16_t yEnd);
@@ -158,9 +172,7 @@ uint16_t LCD_BGR2RGB(uint16_t c);
 void LCD_SetParam(void);
 void Lcd_WriteData_16Bit(uint16_t Data);
 void LCD_direction(uint8_t direction );
-uint16_t LCD_Read_ID(void);		
 uint8_t SPI_WriteByte(uint8_t Byte);
-void SPI_SetSpeed(uint8_t SpeedSet);
 #endif  
 	 
 	 
