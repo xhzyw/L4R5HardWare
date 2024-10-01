@@ -3,7 +3,7 @@
 <title>Static Call Graph - [L4R5HardWare\L4R5HardWare.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image L4R5HardWare\L4R5HardWare.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Wed Oct 02 01:41:32 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Wed Oct 02 02:35:39 2024
 <BR><P>
 <H3>Maximum Stack Usage =       1024 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1171,6 +1171,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_SPI1_Init
+<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_UpdatePart
 </UL>
 
 <P><STRONG><a name="[15f]"></a>HAL_SPI_MspInit</STRONG> (Thumb, 138 bytes, Stack size 40 bytes, spi.o(i.HAL_SPI_MspInit))
@@ -1363,10 +1364,11 @@ Global Symbols
 <LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Clear
 </UL>
 
-<P><STRONG><a name="[182]"></a>LCD_UpdatePart</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, lcd.o(i.LCD_UpdatePart))
+<P><STRONG><a name="[182]"></a>LCD_UpdatePart</STRONG> (Thumb, 110 bytes, Stack size 24 bytes, lcd.o(i.LCD_UpdatePart))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = LCD_UpdatePart &rArr; LCD_SetWindows &rArr; LCD_WR_DATA &rArr; SPI_WriteByte &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFifoStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
+<BR>[Calls]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
 <LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetWindows
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;disp_flush

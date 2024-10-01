@@ -1,9 +1,0 @@
-l4r5hardware\qrcodegen.o: ..\LVGL\src\extra\libs\qrcode\qrcodegen.c
-l4r5hardware\qrcodegen.o: D:\Keil5\ARM\ARMCC\Bin\..\include\assert.h
-l4r5hardware\qrcodegen.o: D:\Keil5\ARM\ARMCC\Bin\..\include\limits.h
-l4r5hardware\qrcodegen.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-l4r5hardware\qrcodegen.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
-l4r5hardware\qrcodegen.o: ..\LVGL\src\extra\libs\qrcode\qrcodegen.h
-l4r5hardware\qrcodegen.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
-l4r5hardware\qrcodegen.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-l4r5hardware\qrcodegen.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h

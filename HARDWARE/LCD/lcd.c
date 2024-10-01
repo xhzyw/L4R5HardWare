@@ -513,13 +513,16 @@ void LCD_UpdatePart(uint16_t xStart, uint16_t yStart, uint16_t xEnd, uint16_t yE
 //            SPI_WriteByte(color);      // 低字节
 //        }
 //    }
+// 设置 SPI 数据大小为 16 位
 		hspi1.Init.DataSize = SPI_DATASIZE_16BIT;
-		//hspi1.Instance->CR1|=SPI_CR1_DFF;
+		hspi1.Instance->CR1|=SPI_CR1_CRCL;
+		HAL_SPI_Init(&hspi1); // 重新初始化 SPI 以应用新的数据帧大小配置
 		HAL_SPI_Transmit_DMA(&hspi1,(uint8_t*)colorBuffer,size);
 		while(__HAL_DMA_GET_COUNTER(&hdma_spi1_tx)!=0);
 
 		hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
-		//hspi1.Instance->CR1&=~SPI_CR1_DFF;
+		hspi1.Instance->CR1&=~SPI_CR1_CRCL;
+		HAL_SPI_Init(&hspi1);
     LCD_CS_SET;      // 取消选择LCD（片选拉高）
 }
 
