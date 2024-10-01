@@ -2,3 +2,8 @@
 *.crf
 *.d
 *.s
+*.htm
+MDK-ARM/L4R5HardWare/*.__i
+MDK-ARM/L4R5HardWare/L4R5HardWare.axf
+MDK-ARM/L4R5HardWare/L4R5HardWare.build_log.htm
+
