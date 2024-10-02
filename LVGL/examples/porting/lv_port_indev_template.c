@@ -68,7 +68,6 @@ void lv_port_indev_init(void)
 /*Initialize your touchpad*/
 static void touchpad_init(void)
 {
-//    tp_dev.init();
 	    TP_Init();
 }
 
@@ -97,15 +96,10 @@ static void touchpad_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
 /*Return true is the touchpad is pressed*/
 static bool touchpad_is_pressed(void)
 {
-//    tp_dev.scan(0);
 			tp_dev.scan();
 			if((tp_dev.sta)&(1<<0)){
 					return true;
 			}
-//    if(tp_dev.sta & TP_PRES_DOWN)
-//    {
-//        return true;
-//    }
     return false;
 }
 

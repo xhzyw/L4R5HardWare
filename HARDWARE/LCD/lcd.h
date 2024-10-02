@@ -72,7 +72,8 @@ typedef struct
 //LCD参数
 extern _lcd_dev lcddev;	//管理LCD重要参数
 /////////////////////////////////////用户配置区///////////////////////////////////	 
-#define USE_HORIZONTAL  	 0//定义液晶屏顺时针旋转方向 	0-0度旋转，1-90度旋转，2-180度旋转，3-270度旋转
+#define USE_HORIZONTAL  	 1//定义液晶屏顺时针旋转方向 	0-0度旋转，1-90度旋转，2-180度旋转，3-270度旋转
+#define USE_VERTICAL       0
 
 //////////////////////////////////////////////////////////////////////////////////	  
 //定义LCD的尺寸
@@ -151,28 +152,8 @@ extern uint16_t  BACK_COLOR; //背景颜色.默认为白色
 #define LBBLUE          0X2B12 //浅棕蓝色(选择条目的反色)
 	    															  
 void LCD_Init(void);
-void LCD_GPIO_Init(void);//初始化GPIO
-void LCD_DisplayOn(void);
-void LCD_DisplayOff(void);
-void LCD_Clear(uint16_t Color);	 
-void LCD_SetCursor(uint16_t Xpos, uint16_t Ypos);
-void LCD_DrawPoint(uint16_t x,uint16_t y);//画点
-void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
-void LCD_DrawRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);		   
-void LCD_SetWindows(uint16_t xStar, uint16_t yStar,uint16_t xEnd,uint16_t yEnd);
-
-uint8_t LCD_RD_DATA(void);//读取LCD数据									    
-void LCD_WriteReg(uint8_t LCD_Reg, uint16_t LCD_RegValue);
-void LCD_WR_DATA(uint8_t data);
-uint8_t LCD_ReadReg(uint8_t LCD_Reg);
-void LCD_WriteRAM_Prepare(void);
-void LCD_WriteRAM(uint16_t RGB_Code);
-uint16_t LCD_ReadRAM(void);		   
-uint16_t LCD_BGR2RGB(uint16_t c);
-void LCD_SetParam(void);
-void Lcd_WriteData_16Bit(uint16_t Data);
+void LCD_Clear(uint16_t Color);	    
 void LCD_direction(uint8_t direction );
-uint8_t SPI_WriteByte(uint8_t Byte);
 #endif  
 	 
 	 

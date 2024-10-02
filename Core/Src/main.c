@@ -30,8 +30,6 @@
 #include "sys.h"
 #include "lcd.h"
 #include "touch.h"
-#include "gui.h"
-#include "test.h"
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
 #include "lv_port_indev_template.h"
@@ -110,8 +108,7 @@ int main(void)
   MX_NVIC_Init();
   /* USER CODE BEGIN 2 */
 	LCD_Init();
-	LCD_direction(1);
-	//TP_Init();
+	HAL_Delay(1000);
 	// 清除定时器初始化过程中的更新中断标志，避免定时器一启动就中断
 	__HAL_TIM_CLEAR_IT(&htim3, TIM_IT_UPDATE);		
 	// 使能定时器3更新中断并启动定时器
@@ -201,8 +198,6 @@ static void MX_NVIC_Init(void)
 // 定时器更新中断回调函数
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	static uint16_t TIM3_Cnt1 = 0;
-	
 	// 判断是定时器3发生的中断
 	if(htim->Instance == TIM3)
 	{

@@ -6,4 +6,9 @@
 MDK-ARM/L4R5HardWare/*.__i
 MDK-ARM/L4R5HardWare/L4R5HardWare.axf
 MDK-ARM/L4R5HardWare/L4R5HardWare.build_log.htm
-
+MDK-ARM/L4R5HardWare.uvguix.QJM38
+MDK-ARM/L4R5HardWare.uvguix.QJM38
+*.uvprojx
+MDK-ARM/L4R5HardWare.uvoptx
+MDK-ARM/L4R5HardWare/L4R5HardWare.map
+MDK-ARM/L4R5HardWare/L4R5HardWare.lnp

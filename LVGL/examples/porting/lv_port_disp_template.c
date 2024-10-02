@@ -11,9 +11,6 @@
  *********************/
 #include "lv_port_disp_template.h"
 #include "lvgl.h"
-#include "gui.h"
-#include "spi.h"
-#include "stm32l4r5xx.h"
 /*********************
  *      DEFINES
  *********************/
@@ -102,45 +99,6 @@ void lv_port_disp_init(void)
     /*Finally register the driver*/
     lv_disp_drv_register(&disp_drv);
 }
-
-void LCD_Address_Set(uint16_t x1,uint16_t y1,uint16_t x2,uint16_t y2)
-{
-	LCD_WR_REG(0x2a);//列地址设置
-	LCD_WR_DATA(x1);
-	LCD_WR_DATA(x2);
-	LCD_WR_REG(0x2b);//行地址设置
-	LCD_WR_DATA(y1);
-	LCD_WR_DATA(y2);
-	LCD_WR_REG(0x2c);//储存器写
-}
-
-extern DMA_HandleTypeDef hdma_spi1_tx;
-void lvgl_LCD_Color_Fill(uint16_t sx,uint16_t sy,uint16_t ex,uint16_t ey,uint16_t *color_p)
-{
-//	uint32_t y=0;
-//	uint16_t height,width;
-//	width = ex - sx + 1;
-//	height = ey - sy + 1;
-//	LCD_SetWindows(sx,sy,ex,ey);
-	
-	uint32_t y=0;
-	uint16_t height,width;
-	width = ex - sx + 1;
-	height = ey - sy + 1;
-	uint32_t size = width * height;
-	
-	LCD_Address_Set(sx,sy,ex,ey);
-	
-//	hspi1.Init.DataSize = SPI_DATASIZE_16BIT;
-//	hspi1.Instance->CR1|=SPI_CR1_CRCL;
-	HAL_SPI_Transmit_DMA(&hspi1,(uint8_t*)color_p,size);
-//	while(__HAL_DMA_GET_COUNTER(&hdma_spi1_tx)!=0);
-//	
-//	hspi1.Init.DataSize = SPI_DATASIZE_8BIT;
-//	hspi1.Instance->CR1&=~SPI_CR1_CRCL;
-}
-
-
 /**********************
  *   STATIC FUNCTIONS
  **********************/
@@ -158,8 +116,6 @@ static void disp_init(void)
  *'lv_disp_flush_ready()' has to be called when finished.*/
 static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p)
 {
-   // lcd_color_fill(area->x1, area->y1, area->x2, area->y2, (uint16_t*)color_p);
-	  //lvgl_LCD_Color_Fill(area->x1, area->y1, area->x2, area->y2, color_p);
    extern void LCD_UpdatePart(uint16_t xStart, uint16_t yStart, uint16_t xEnd, uint16_t yEnd, uint16_t* colorBuffer);
 		LCD_UpdatePart(area->x1,area->y1,area->x2,area->y2,(uint16_t*)&color_p->full);
     lv_disp_flush_ready(disp_drv);
